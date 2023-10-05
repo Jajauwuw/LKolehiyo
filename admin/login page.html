@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="dasbord.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="login-container">
+            <img src="./img/logo.jpg" alt="Description of the image">
+            <h2>WELCOME BACK</h2>
+            <p>Login to your account</p>
+            <form id="login-form" onsubmit="return validateForm()">
+                <input type="text" id="USERNAME" name="USERNAME" placeholder="USERNAME" required><br><br>
+                <input type="password" id="PASSWORD" name="PASSWORD" placeholder="PASSWORD" required><br><br>
+                <input type="submit" class="submit" value="SIGN IN">
+            </form>
+            <p id="error-message" style="color: red;"></p>
+            <!-- Next Page link -->
+            <a href="nextpage.html">Next Page</a>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("USERNAME").value;
+            var password = document.getElementById("PASSWORD").value;
+
+            // Simple validation (replace with proper backend validation)
+            if (username === "admin" && password === "password") {
+                alert("Login successful!");
+                return true;
+            } else {
+                document.getElementById("error-message").innerHTML = "Invalid username or password.";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
